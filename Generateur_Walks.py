@@ -18,13 +18,12 @@ yMap = args.steps * [0]
 accomplished = args.steps
 
 def walk(val, i):
-    """
-    Add a walk on map
-    0 = forward
+#Add a walk on map
+    """ 0 = forward
     1 = left
     2 = right
-    3 = backward
-    """    
+    3 = backward"""
+
     if val == 0: 
         xMap[i] = xMap[i-1]
         yMap[i] = yMap[i-1] + 1
@@ -39,7 +38,7 @@ def walk(val, i):
         yMap[i] = yMap[i-1] - 1
 
 def reverse_walk(val):
-    """Compute reverse_walk of a walk"""   
+    #Compute reverse_walk of a walk
     x = None
     if(val == 0):
         x = 3
@@ -52,7 +51,7 @@ def reverse_walk(val):
     return x
 
 def isVisited(i):
-    """Check if the walk is already known"""   
+    #Check if the walk is already known
     for j in range(1, i-1):
         if(xMap[i] == xMap[j] and yMap[i] == yMap[j]):
             return True
@@ -119,6 +118,7 @@ plt.clf()
 
 xTotal = 0
 yTotal = 0
+
 # Compute distance
 for i in range(0,args.steps):
     xTotal += xMap[i]
